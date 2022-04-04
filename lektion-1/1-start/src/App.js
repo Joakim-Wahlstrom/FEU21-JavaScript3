@@ -1,16 +1,19 @@
 import './App.css';
+import Header from './components/Header';
+import Person from './components/Person';
 
 function App() {
 
-  const handleClick = (name) => {
-    console.log('yaay, ' + name + ' tryckte på knappen')
-  }
+
 
 
   return (
     <div>
-      <h1>hej</h1>
-      <button onClick={ (e) => handleClick('Joakim') }>Tryck här</button>
+      <Header />
+      <br />
+      <Person name="Joakim" age="35" />
+      <Person name="Jeanette" age="34" />
+      <Person name="Hans" age="37" />
     </div>
   )
 }
