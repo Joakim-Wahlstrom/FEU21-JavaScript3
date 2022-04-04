@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import Post from './components/Post/Post';
 
 function App() {
 
@@ -33,6 +34,16 @@ function App() {
     console.log(counter, 'inne i funktionen')
   }
 
+
+  // if(!isLoggedIn) {
+  //   return (
+  //     <>
+  //       <h1>Please login då</h1>
+  //       <button onClick={() => setIsLoggedIn(prev => !prev)}>{isLoggedIn ? 'Logout' : 'Login'}</button>
+  //     </>
+  //   )
+  // }
+
   return (
     <div className="App">
       { isLoggedIn ? <h1 className='text-center mb-2'>Posts</h1> : <h1 className='text-center mb-2'>Please Login!</h1> }
@@ -42,7 +53,27 @@ function App() {
 
       <div className="container">
 
+      {/* <Post title="Post 1" body="this is a post" /> */}
 
+      {/* { 
+        posts.map(post => <Post title={post.title} body={post.body} key={post.id} />)
+      } */}
+
+      {/* {
+        posts.map(post => {
+          if(isLoggedIn) {
+            return <Post title={post.title} body={post.body} key={post.id} />
+          } else {
+            return ''
+          }
+        })
+      } */}
+
+      {
+        posts.map(post => (
+          isLoggedIn ? <Post title={post.title} body={post.body} key={post.id} /> : ''
+        ))
+      }
 
       </div>
 
