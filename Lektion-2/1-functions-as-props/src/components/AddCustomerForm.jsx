@@ -1,21 +1,25 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
-export const AddCustomerForm = () => {
+export const AddCustomerForm = ({ addCustomer }) => {
 
-  // const customerName = useRef()
+  const customerNameInput = useRef()
   const [customerName, setCustomerName] = useState('')
 
-  const addCustomer = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
 
-    // lägg till kunden i listan
+    if(customerName.trim() === '') return
+
+    addCustomer(customerName)
+    setCustomerName('')
+    customerNameInput.current.focus()
   }
 
   return (
-    <form onSubmit={addCustomer}>
+    <form onSubmit={handleSubmit}>
       <h2 className="text-center mb-4">Add Customer</h2>
       <div className="input-group">
-        <input type="text" className="form-control" value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="Enter customer name" />
+        <input type="text" className="form-control" ref={customerNameInput} value={customerName} onChange={e => setCustomerName(e.target.value)} placeholder="Enter customer name" />
         <button className="btn btn-primary">Add Customer</button>
       </div>
     </form>
