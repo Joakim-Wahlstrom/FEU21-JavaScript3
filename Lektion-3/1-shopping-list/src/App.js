@@ -39,10 +39,53 @@ function App() {
     })
   }
 
+  const removeItem = id => {
+    setItems(prev => {
+      return prev.filter(item => item.id !== id)
+    })
+  }
+
+  const changeItem = (item, newTitle) => {
+    item.product = newTitle
+    setItems(prev => [...prev])
+  }
+
+  const toggleComplete = item => {
+    // setItems(prevItems => {
+    //   const newItems = prevItems.map(_item => {
+    //     if(_item.id === item.id) {
+    //       _item.completed = !_item.completed
+    //       return _item
+    //     }
+
+    //     return _item
+    //   })
+
+    //   return newItems
+    // })
+
+    // const newItems = items.map(_item => {
+    //   if(_item.id === item.id) {
+    //     _item.completed = !_item.completed
+    //     return _item
+    //   }
+
+    //   return _item
+    // })
+    // setItems(newItems)
+
+    item.completed = !item.completed
+    setItems(prev => {
+      prev.sort((a, b) => a.completed - b.completed) 
+      return [...prev]
+    })
+
+  }
+
   return (
     <div className="App container">
       <Header title="Shopping List" setShowModal={setShowModal} />
-      <ShoppingList items={items} />
+      <ShoppingList items={items} removeItem={removeItem} changeItem={changeItem} toggleComplete={toggleComplete} />
       <AddItemForm addItem={addItem} />
       { showModal && <Modal clearList={clearList} setShowModal={setShowModal} /> }
     </div>
