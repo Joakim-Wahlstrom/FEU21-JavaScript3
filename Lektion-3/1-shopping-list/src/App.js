@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css';
 import { v4 as uuidv4} from 'uuid'
 import Header from './components/Header';
@@ -9,45 +9,33 @@ import Modal from './components/Modal';
 function App() {
   
   const [showModal, setShowModal] = useState(false)
-  const [items, setItems] = useState([
-    {
-      id: uuidv4(),
-      product: 'milk',
-      completed: false
-    },
-    {
-      id: uuidv4(),
-      product: 'bread',
-      completed: true
-    },
-    {
-      id: uuidv4(),
-      product: 'butter',
-      completed: false
-    }
-  ])
+  const [items, setItems] = useState([])
 
 
   const clearList = () => {
     setItems([])
     setShowModal(false)
+    // localStorage.setItem('itemsList', JSON.stringify(items))
   }
 
   const addItem = (product) => {
     setItems(prevItems => {
       return [{ id: uuidv4(), product, completed: false }, ...prevItems]
     })
+    // localStorage.setItem('itemsList', JSON.stringify(items))
   }
 
   const removeItem = id => {
     setItems(prev => {
       return prev.filter(item => item.id !== id)
     })
+    // localStorage.setItem('itemsList', JSON.stringify(items))
   }
 
   const changeItem = (item, newTitle) => {
     item.product = newTitle
     setItems(prev => [...prev])
+    // localStorage.setItem('itemsList', JSON.stringify(items))
   }
 
   const toggleComplete = item => {
@@ -79,8 +67,22 @@ function App() {
       prev.sort((a, b) => a.completed - b.completed) 
       return [...prev]
     })
+    // localStorage.setItem('itemsList', JSON.stringify(items))
 
   }
+
+  useEffect(() => {
+    const storedItems = JSON.parse(localStorage.getItem('itemsList'))
+    if(storedItems) {
+      setItems(storedItems)
+    }
+
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('itemsList', JSON.stringify(items))
+  }, [items])
+
 
   return (
     <div className="App container">
