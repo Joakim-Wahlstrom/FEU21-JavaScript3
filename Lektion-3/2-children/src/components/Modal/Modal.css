@@ -1,0 +1,37 @@
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background-color: #0000005d;
+}
+.modal {
+  background: #fff;
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.modal h2 {
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 1rem;
+}
+.modal p {
+  padding-block: 1rem;
+}
+
+.modal .sales-btn {
+  background-color: red;
+  font-size: 1.2rem;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+}
+.split .left, 
+.split .right { padding: 2rem; flex: 1;}
+
+
+.split .left {
+  border-right: 1px solid #ddd;
+}
