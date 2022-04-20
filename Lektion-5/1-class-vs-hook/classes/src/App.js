@@ -9,11 +9,7 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      products: [
-        { id: Date.now().toString(), name: 'Product 1', desc: 'Produktbeskrivning' },
-        { id: '1234etry', name: 'Product 2', desc: 'Produktbeskrivning' },
-
-      ]
+      products: []
     }
   }
 
@@ -22,7 +18,7 @@ export default class App extends Component {
 
     const storedProducts = JSON.parse(localStorage.getItem('products'))
     if(storedProducts) {
-      this.setState({ products: storedProducts })
+      this.setState({ products: [...storedProducts] })
     }
 
   }
