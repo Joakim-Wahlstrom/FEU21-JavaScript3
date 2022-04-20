@@ -7,21 +7,23 @@ function App() {
 
   // STATE
   const [products, setProducts] = useState([
-    { id: Date.now().toString(), name: 'Product 1', desc: 'produktbeskrivning' }
+    // { id: Date.now().toString(), name: 'Product 1', desc: 'produktbeskrivning' }
   ])
+
+  console.log(products)
 
   // LIFECYCLES
   useEffect(()=> {
+    console.log(1)
     const storedProducts = JSON.parse(localStorage.getItem('products'))
-
-    console.log(storedProducts)
-    if(storedProducts)
-      setProducts([...storedProducts])
+    if(storedProducts){
+      setProducts(storedProducts)
+    }
       
-
   }, [])
 
   useEffect(() => {
+    console.log(2)
     localStorage.setItem('products', JSON.stringify(products))
   }, [products])
 
