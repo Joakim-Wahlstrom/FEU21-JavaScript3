@@ -7,10 +7,18 @@ const AuthContextProvider = ({ children }) => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
+  const login = () => {
+    setTimeout(() => {
+      setIsAuthenticated(true)
+    }, 1000)
+  }
 
+  const logout = () => {
+    setIsAuthenticated(false)
+  }
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       { children }
     </AuthContext.Provider>
   )
