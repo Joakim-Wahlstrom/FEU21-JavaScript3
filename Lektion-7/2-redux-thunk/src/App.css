@@ -47,3 +47,16 @@ body, html {
   color: orange;
 }
 
+.post {
+  box-shadow: 5px 5px 10px #33333382;
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+.post h2 {
+  color: orange;
+  margin-bottom: 1rem;
+}
