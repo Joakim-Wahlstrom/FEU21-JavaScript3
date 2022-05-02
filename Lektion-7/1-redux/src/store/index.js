@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
-import counterReducer from './reducers/counterReducer'
+import rootReducer  from './reducers'
 
 export const store = createStore(
-  counterReducer
+  rootReducer
 )

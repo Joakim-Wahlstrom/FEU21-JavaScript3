@@ -5,7 +5,7 @@ import { increment, decrement } from '../store/actions/counterActions'
 const Counter = () => {
 
   const dispatch = useDispatch()
-  const counter = useSelector(state => state)
+  const counter = useSelector(state => state.counter)
 
   return (
     <div>
