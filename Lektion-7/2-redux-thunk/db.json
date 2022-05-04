@@ -17,6 +17,26 @@
     }
   ],
   "users": [
-    
+    {
+      "email": "joakim@mail.com",
+      "password": "$2a$10$c32UZ/UKRo6Ie5J9WwOdl.meDS85oLsH0.6OobRGrhTWwKOGyxBVS",
+      "firstName": "Joakim",
+      "lastName": "Wahlström",
+      "id": 1
+    },
+    {
+      "email": "joakim2@mail.com",
+      "password": "$2a$10$AHVlWn/Ch7xHqeDCKUoe0u4yAySt3mYsurYREK6Zt2DHpzsvS8KbK",
+      "firstName": "joakim",
+      "lastName": "weasfg",
+      "id": 2
+    },
+    {
+      "email": "asd@asd.as",
+      "password": "$2a$10$O6nhaeG9Ymfcbb6FK7wVsuFJbU/B/sjxg4iv9LfDiplc6hmOB7S0K",
+      "firstName": "asd",
+      "lastName": "asd",
+      "id": 3
+    }
   ]
 }

@@ -1,6 +1,12 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { registerUser } from '../store/actions/authActions'
 
 const RegisterForm = ({setLogin}) => {
+
+  const dispatch = useDispatch()
+
+  const loading = useSelector(state => state.auth.loading)
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -16,10 +22,15 @@ const RegisterForm = ({setLogin}) => {
     }))
   }
 
+  const handleSub = e => {
+    e.preventDefault()
+    dispatch(registerUser(formData))
+  }
+
   return (
     <div className='card'>
       <h2>Register</h2>
-      <form>
+      <form onSubmit={handleSub}>
         <div className="input-group">
           <label htmlFor="firstName">First Name: </label>
           <input value={formData.firstName} onChange={onChange} type="text" id='firstName' name='firstName' className='form-control' />
@@ -38,7 +49,7 @@ const RegisterForm = ({setLogin}) => {
         </div>
         <p>Already a member? <span onClick={() => setLogin(true)} className='link'>login</span></p>
         <div>
-          <button className='btn'>Sign up</button>
+          <button className='btn'>{loading ? 'Loading...' : 'Sign up'}</button>
         </div>
       </form>
     </div>
