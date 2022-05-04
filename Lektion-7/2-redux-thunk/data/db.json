@@ -9,6 +9,16 @@
       "id": 2,
       "title": "Post 2",
       "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quasi voluptate nostrum dolorum nihil, tenetur nisi, libero quidem fugiat, assumenda laboriosam vitae eaque eum eveniet optio vel nulla perferendis nemo!"
+    },
+    {
+      "title": "test",
+      "body": "kajsd kasdj askjd askj asd",
+      "id": 3
+    },
+    {
+      "title": "asdf",
+      "body": "asfdggffdg",
+      "id": 4
     }
   ]
 }
