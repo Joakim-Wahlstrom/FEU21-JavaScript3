@@ -16,7 +16,7 @@ const PostDetailsView = () => {
       dispatch(clearPost())
     }
 
-  }, [])
+  }, [dispatch, id])
 
   const { loading, data: post, error } = useSelector(state => state.post)
 
