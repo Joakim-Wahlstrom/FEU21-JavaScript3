@@ -1,11 +1,12 @@
 import axios from 'axios'
 import actiontypes from '../actiontypes'
 // import jwt from 'jsonwebtoken'
+import jwt_decode from 'jwt-decode'
 
 const apiCall = (url, user, dispatch) => {
   axios.post(url, user)
   .then(res => {
-    console.log(res.data)
+    // console.log(res.data)
     dispatch(authSuccess(res.data.accessToken))
   })
   .catch(err => dispatch(authFailure(err.message)))
@@ -36,11 +37,11 @@ export const checkUser = () => {
   return dispatch => {
     let token = localStorage.getItem('token')
     if(token) {
-      // if(jwt.decode(token).exp < Date.now()) {
+      if(jwt_decode(token).exp * 1000 > Date.now()) {
         dispatch(authSuccess(token))
-      // } else {
-      //   localStorage.removeItem('token')
-      // }
+      } else {
+        localStorage.removeItem('token')
+      }
     }
   }
 }

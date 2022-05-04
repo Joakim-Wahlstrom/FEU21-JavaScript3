@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import LoginForm from '../components/LoginForm'
 import RegisterForm from '../components/RegisterForm'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 
@@ -10,12 +10,15 @@ const LoginView = () => {
   const navigate = useNavigate()
 
   const user = useSelector(state => state.auth.token)
+  const { state } = useLocation()
 
   const [login, setLogin] = useState(true)
 
   useEffect(() => {
     if(user) {
-      navigate('/')
+      // navigate(state?.from || "/")
+      try {navigate(state.from)} 
+      catch {navigate("/")}
     }
   }, [user, navigate])
 
