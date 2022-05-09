@@ -6,7 +6,10 @@ const actiontypes = () => {
             getProductCatalogFailure: 'GET_PRODUCT_CATALOG_FAILURE'
         },
         cart: {
-            add: 'ADD_TO_CART'
+            add: 'ADD_TO_CART',
+            decrement: 'DECREMENT',
+            removeOne: 'REMOVE_ONE',
+            clearCart: 'CLEAR_CART'
         }
     }
 }
