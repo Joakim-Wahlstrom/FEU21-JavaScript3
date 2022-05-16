@@ -41,3 +41,39 @@ let user = {
 // user.name = 245
 user.name = 'Hans'
 // user.address = 'hemma'
+
+
+
+let userName: string = 'kjsd'
+
+userName = 'Joakim'
+
+
+let userNames: string[]
+userNames = []
+
+userNames.push('Joakim')
+
+
+let mixedArray: (string | number)[]
+
+let obj1: object
+
+obj1 = { name: 'Joakim', age: 35 }
+obj1 = { name: 34, isActive: false }
+
+
+let obj2: {
+    name: string,
+    age: number
+}
+
+obj2 = {
+    name: 'joakim',
+    age: 35
+}
+
+let lastName: any;
+
+lastName = 'Wahlström'
+lastName = 346

@@ -26,3 +26,20 @@ var user = {
 // user.name = 245
 user.name = 'Hans';
 // user.address = 'hemma'
+var userName = 'kjsd';
+userName = 'Joakim';
+var userNames;
+userNames = [];
+userNames.push('Joakim');
+var mixedArray;
+var obj1;
+obj1 = { name: 'Joakim', age: 35 };
+obj1 = { name: 34, isActive: false };
+var obj2;
+obj2 = {
+    name: 'joakim',
+    age: 35
+};
+var lastName;
+lastName = 'Wahlström';
+lastName = 346;
