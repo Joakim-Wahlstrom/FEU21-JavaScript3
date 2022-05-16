@@ -18,14 +18,14 @@ export class Template {
             p.innerText = item.print();
         });
         const minusBtn = document.createElement('button');
-        minusBtn.className = 'btn btn-dark btn-sm fixed';
+        minusBtn.className = 'btn btn-dark btn-sm fixed ms-1';
         minusBtn.innerText = '-';
         minusBtn.addEventListener('click', () => {
             item.sub();
             p.innerText = item.print();
         });
         const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'btn btn-danger btn-sm fixed';
+        deleteBtn.className = 'btn btn-danger btn-sm fixed ms-1';
         deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteBtn.addEventListener('click', () => {
             li.remove();

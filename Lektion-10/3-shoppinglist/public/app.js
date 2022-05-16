@@ -16,4 +16,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     const _item = new ShoppingItem(item.value, amount.valueAsNumber);
     items.list.push(_item);
+    list.render(_item);
+    form.reset();
+    console.log(items);
 });

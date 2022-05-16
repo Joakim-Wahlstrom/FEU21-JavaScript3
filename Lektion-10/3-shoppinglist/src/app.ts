@@ -22,5 +22,7 @@ form.addEventListener('submit', (e: Event) => {
 
     const _item: ShoppingItem = new ShoppingItem(item.value, amount.valueAsNumber)
     items.list.push(_item);
-
+    list.render(_item);
+    form.reset();
+    console.log(items);
 })
