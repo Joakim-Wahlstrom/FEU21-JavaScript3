@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark">
+
+    <header class="bg-dark">
+        <div class="container py-3 text-white">
+            <h1>Shopping List</h1>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        <form id="form">
+            <div class="row">
+                <div class="col-8">
+                    <input type="text" class="form-control" id="item">
+                </div>
+                <div class="col-3">
+                    <input type="number" class="form-control" id="amount" value="1">
+                </div>
+                <div class="col-1">
+                    <button class="btn btn-secondary w-100">ADD</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="container">
+        <ul class="bg-secondary mt-5 p-5" id="output">
+            <li class="p-2 bg-light d-flex justify-content-between align-items-center rounded mb-2">
+                <p class="m-0 h3">Mjölk</p>
+                <div class="buttons">
+                    <button class="btn btn-dark btn-sm fixed">+</button>
+                    <button class="btn btn-dark btn-sm fixed">-</button>
+                    <button class="btn btn-danger btn-sm fixed"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <a href="#">hej</a>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
