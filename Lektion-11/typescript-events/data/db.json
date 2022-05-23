@@ -1,0 +1,10 @@
+{
+  "events": [
+    {
+      "title": "Event 1",
+      "description": "Ett event som handlar om någonting kul",
+      "timestamp": 1653290260864,
+      "id": "12qwedfv"
+    }
+  ]
+}
