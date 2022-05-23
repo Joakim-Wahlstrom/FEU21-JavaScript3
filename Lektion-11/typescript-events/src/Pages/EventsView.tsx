@@ -1,27 +1,14 @@
-import React, { FC, useState, useEffect, useCallback } from 'react'
-import axios from 'axios'
+import { FC } from 'react'
+
 import IEvent from '../models/IEvent'
 import EventCard from '../components/Events/EventCard'
 
-const EventsView:FC = () => {
+type props = {
+  events: IEvent[]
+}
 
-  const [url] = useState<string>('http://localhost:8080/events')
+const EventsView:FC<props> = ({events}) => {
 
-  const [events, setEvents] = useState<IEvent[]>([])
-
-  const getEvents = useCallback(
-    async () => {
-      const { data, status } = await axios.get<IEvent[]>(url)
-
-      if(status === 200) {
-        setEvents(data)
-      }
-    }, [url])
-
-
-  useEffect(() => {
-    getEvents()
-  }, [getEvents])
 
   return (
     <div className='events-view'>
