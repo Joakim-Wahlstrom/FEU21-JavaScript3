@@ -1,6 +1,7 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import IEvent from '../models/IEvent'
+import EventCard from '../components/Events/EventCard'
 
 const EventsView:FC = () => {
 
@@ -8,8 +9,27 @@ const EventsView:FC = () => {
 
   const [events, setEvents] = useState<IEvent[]>([])
 
+  const getEvents = useCallback(
+    async () => {
+      const { data, status } = await axios.get<IEvent[]>(url)
+
+      if(status === 200) {
+        setEvents(data)
+      }
+    }, [url])
+
+
+  useEffect(() => {
+    getEvents()
+  }, [getEvents])
+
   return (
-    <div>EventsView</div>
+    <div className='events-view'>
+      {!events.length && <p>No events to show</p>}
+      { events.map(evt => (
+        <EventCard evt={evt} key={evt.id} />
+      )) }
+    </div>
   )
 }
 
